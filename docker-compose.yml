@@ -1,26 +1,29 @@
-ark:
-  container_name: ark
-  image: boerngenschmidt/ark-docker
-  environment:
-    - SESSIONNAME=Ark Docker
-    - SERVERMAP=TheIsland
-    - MAX_PLAYERS=70
-    - SERVERPASSWORD="" 
-    - ADMINPASSWORD=adminpassword
-    - SERVERPORT=27015
-    - STEAMPORT=7778
-    - BACKUPONSTART=1
-    - BACKUPONSTOP=1
-    - WARNONSTOP=1
-    - UPDATEONSTART=1
-    - TZ=UTC
-    - ARK_GID=1000
-    - ARK_UID=1000
-  volumes:
-    - /my/path/to/ark:/ark
-  ports:
-   - 7778:7778/udp
-   - 7778:7778
-   - 27015:27015/udp
-   - 27015:27015
-   - 32330:32330
+version: '2.3'
+
+services:
+  ark:
+    container_name: ark
+    image: spritsail/ark-se
+    environment:
+      - SESSIONNAME=Ark Survival Evolved in Docker
+      - SERVERMAP=TheIsland
+      - MAX_PLAYERS=70
+      - SERVERPASSWORD=""
+      - ADMINPASSWORD=changeme
+      - SERVERPORT=27015
+      - STEAMPORT=7778
+      - BACKUPONSTART=1
+      - BACKUPONSTOP=1
+      - WARNONSTOP=1
+      - UPDATEONSTART=1
+      - TZ=UTC
+      - ARK_GID=1000
+      - ARK_UID=1000
+    volumes:
+      - /my/path/to/ark:/ark
+    ports:
+     - 7778:7778/udp
+     - 7778:7778
+     - 27015:27015/udp
+     - 27015:27015
+     - 32330:32330
