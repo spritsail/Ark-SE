@@ -13,7 +13,7 @@ function stop {
 		echo "[Backup on stop]"
 		arkmanager backup
 	fi
-	if [ ${WARNONSTOP} -eq 1 ];then 
+	if [ ${WARNONSTOP} -eq 1 ];then
 	    arkmanager stop --warn
 	else
 	    arkmanager stop
@@ -45,7 +45,6 @@ if [ ! -d /ark/server  ] || [ ! -f /ark/server/version.txt ];then
 	mkdir -p /ark/server/ShooterGame/Binaries/Linux/
 	touch /ark/server/ShooterGame/Binaries/Linux/ShooterGameServer
 	arkmanager install
-	# Create mod dir
 else
 	if [ ${BACKUPONSTART} -eq 1 ] && [ "$(ls -A server/ShooterGame/Saved/SavedArks/)" ]; then
 		echo "[Backup]"

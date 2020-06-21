@@ -27,7 +27,7 @@ chmod -R 777 /root/
 
 # Starting cron
 echo "Starting crond..."
-crond
+cron
 
 # Launch run.sh with user steam
 su -p -c /home/steam/run.sh steam
